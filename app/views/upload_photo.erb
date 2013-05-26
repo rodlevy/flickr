@@ -2,11 +2,19 @@
 
   <form method = "post" action = '/upload' enctype="multipart/form-data">
  
-  <h3>Title: <input type = "text" name = "photo_name" placeholder = "Photo Name"></h3>
+  <h3>Title: <input type = "text" name ="name" placeholder = "Photo Name"></h3>
+  <br>
   <input type="file" name="image"><br><br>
   
     <div class = 'album'>
       <label for="question">Album Name for Photo: </label><input type = "text" name = "album" placeholder = "Album">
+
+      <label for="album">Album:</label>
+  <select name="album">    
+    <% @user.albums.each do |album| %>
+    <option value="<%=album.id%>"><%=album.album_name%></option>
+    <% end %>
+  </select><br><br>
  
   <input type = "submit" value = "Submit">
  </form>

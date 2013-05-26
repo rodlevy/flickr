@@ -6,6 +6,8 @@
 
 <%@photos.each do |photo|%>
 	<ul>
-		<li><a href=#><%=photo.image%><a></li>
+		<li><a href=#><%=photo.file%><a></li>
+    <img src="<%=photo.photo_url%>">
+
 	</ul>
 <%end%>
