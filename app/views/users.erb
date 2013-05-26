@@ -1,0 +1,12 @@
+<br>
+<br>
+<br>
+
+
+<p>Here is a list of Users.  Click on the name to see his/her albums</p>
+
+<%@users.each do |user|%>
+	<ul>
+		<li><a href="/users/<%=user.id%>/albums"><%=user.name%><a></li>
+	</ul>
+<%end%>

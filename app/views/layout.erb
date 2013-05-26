@@ -1,0 +1,40 @@
+å<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+
+  <title>Flickr</title>
+</head>
+<body>
+  <header>
+  <ul>
+  <!--   <li><a href="/"><img src="http://media.merchantcircle.com/41076489/gorilla_full.png" width="72px" height="72px"></a></li> -->
+    <li><a href="/">Home</a></li>
+    <li><a href="/upload">Upload</a></li>
+    <% if @user = current_user %>
+    <li><a href="/user/<%=@user.name%>"><%=@user.name%></a></li>
+    <li><a href="/logout">Logout</a></li>
+    <% else %>
+    <li><a href="/login">Log In</a></li>
+    <li><a href="/signup">Sign Up</a></li>
+    <% end %>
+  </ul>
+  </header>
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<br>
+<br>
+<br>
+
+
+<p>Here is a list of Albums.  Click on the name to see the photos in that album</p>
+
+<%@albums.each do |album|%>
+	<ul>
+		<li><a href="/albums/:album_id"><%=album.album%><a></li>
+	</ul>
+<%end%>
